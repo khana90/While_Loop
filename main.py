@@ -6,6 +6,7 @@ word_list = ["ardvark", "baboon", "camel"]
 import random
 #TODO-2 - Ask the user to guess a letter and assign their answer to a variable called guess. Make guess lowercase.
 chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
 print(f'the solution is {chosen_word}')
 
 display =[]
@@ -20,11 +21,9 @@ while not end_of_game:
   
   for position in range(word_length):
       letter = chosen_word[position]
-      print(f"Current position: {position}
-      \n Current letter: {letter} \n 
-      Guessed letter: {guess}")
-    if letter == guess:
-      display[position] = letter
+      print(f"Current position: {position}\n Current letter: {letter} \n Guessed letter: {guess}") 
+      if letter == guess:
+       display[position] = letter
     
   print (display)
   if "_" not in display:
