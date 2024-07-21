@@ -10,16 +10,23 @@ print(f'the solution is {chosen_word}')
 
 display =[]
 for _ in range(len(chosen_word)):
-    display += " "
+    display += "_"
 print(display)
+
+end_of_game = False
+
+while not end_of_game:
+  guess = input("Guess a letter: ").lower()
   
-guess = input("Guess a letter: ").lower()
-
-for position in range(len(chosen_word)):
-  letter = chosen_word[position]
-  if letter == guess:
-    display[position] = letter
-  if letter == guess:
-    display[position] = letter
-
-print (display)
+  for position in range(word_length):
+      letter = chosen_word[position]
+      print(f"Current position: {position}
+      \n Current letter: {letter} \n 
+      Guessed letter: {guess}")
+    if letter == guess:
+      display[position] = letter
+    
+  print (display)
+  if "_" not in display:
+    end_of_game = True
+    print("You win.")
